@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="biblioteca"/>
+  <table-filter match-name="tipopublicacion"/>
+  <table-filter match-name="prestamo"/>
+  <table-filter match-name="ejemplar"/>
+  <table-filter match-name="autor"/>
+  <table-filter match-name="publicacion"/>
+  <table-filter match-name="libro"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="multa"/>
+  <table-filter match-name="reserva"/>
+  <table-filter match-name="tipousuario"/>
+</hibernate-reverse-engineering>
