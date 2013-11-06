@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
+        <title>Biblioteca - <tiles:insertAttribute name="title"></tiles:insertAttribute></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/biblioteca/static/vendor/normalize-css/normalize.css">
@@ -27,118 +27,10 @@
             </ul>
         </nav>
         <header>
-            <h1>Publicaciones - <tiles:insertAttribute name="body"></tiles:insertAttribute></h1>
+            <h1><tiles:insertAttribute name="title"></tiles:insertAttribute></h1>
         </header>
         <section>
-            <article>
-                <h2>Lista de publicaciones</h2>
-                <a class="button" href="#new-publicacion">Agregar</a>		
-                <form id="search" method="post" action="">
-                    <input type="text" placeholder="buscar personal...">
-                    <input type="submit" value="Buscar">
-                </form>
-
-                <table cellpadding="0" cellspacing="0" border="0" class="list">
-                    <thead>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Subtitulo</th>
-                            <th>Editor</th>
-                            <th>N&uacute;mero</th>
-                            <th>Fecha de ediciÃ³n</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="over">
-                            <td>Piura progresa</td>
-                            <td></td>
-                            <td>Correo</td>
-                            <td>12323</td>
-                            <td>2009</td>
-                        </tr>
-                        <tr class="over">
-                            <td>Piura progresa</td>
-                            <td></td>
-                            <td>Correo</td>
-                            <td>453223</td>
-                            <td>2013</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </article>
-            <article>
-                <h2>Ingresar publicaciÃ³n</h2>
-                <form method="post" action="">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <th>TÃ­tulo</th>
-                                <td>
-                                    <input type="text" name="" placeholder="ingrese un tÃ­tulo">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>SubtÃ­tulo</th>
-                                <td><input type="text" name="" placeholder="ingrese un subtÃ­tulo"></td>
-                            </tr>
-                            <tr>
-                                <th>Editor</th>
-                                <td><input type="text" name="" placeholder="ingrese un editor"></td>
-                            </tr>
-                            <tr>
-                                <th>NÃºmero</th>
-                                <td><input type="text" name="" placeholder="ingrese un nÃºmero"></td>
-                            </tr>
-                            <tr>
-                                <th>Fecha EdiciÃ³n</th>
-                                <td><input type="date" name="" ></td>
-                            </tr>
-                            <tr>
-                                <th>Tipo</th>
-                                <td>
-                                    <select>
-                                        <option>Selecciona</option>
-                                    </select>
-                                    <a href="#new-tipopublicacion">Crear tipo de publicaciÃ³n</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="submit" value="Guardar">
-                                    <input type="reset" value="Cancelar">
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </form>
-            </article>
-            <article id="new-tipopublicacion">
-                <h2>Tipo de PublicaciÃ³n</h2>
-                <form method="post" action="">
-                    <!-- id, descripcion -->
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <th>DescripciÃ³n</th>
-                                <td>
-                                    <input type="text" name="" placeholder="ingrese una descripciÃ³n">
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="submit" value="Guardar">
-                                    <input type="reset" value="Cancelar">
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </form>
-            </article>
+        <tiles:insertAttribute name="body"></tiles:insertAttribute>
         </section>
     </body>
 </html>

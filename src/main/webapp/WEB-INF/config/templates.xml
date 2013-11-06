@@ -11,4 +11,8 @@
         <put-attribute name="title" value="Example" />        
         <put-attribute name="body" value="Bienvenido" />        
     </definition>  
+    <definition name="publicacion.index" extends="template">
+        <put-attribute name="title" value="Publicaciones" />        
+        <put-attribute name="body" value="/WEB-INF/view/publicacion/index.jsp" />        
+    </definition>  
 </tiles-definitions>
