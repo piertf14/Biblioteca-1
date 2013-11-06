@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template" 
+                template="/WEB-INF/view/templates/template.jsp">                
+        <put-attribute name="title" value="Bienvenido" />          
+    </definition>
+    <definition name="example" extends="template">
+        <put-attribute name="title" value="Example" />        
+        <put-attribute name="body" value="Bienvenido" />        
+    </definition>  
+</tiles-definitions>

@@ -128,23 +128,23 @@ public class Publicacion  implements java.io.Serializable {
         this.fechaEdicion = fechaEdicion;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="publicacion")
-    public Set getReservas() {
-        return this.reservas;
-    }
-    
-    public void setReservas(Set reservas) {
-        this.reservas = reservas;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="publicacion")
-    public Set getPrestamos() {
-        return this.prestamos;
-    }
-    
-    public void setPrestamos(Set prestamos) {
-        this.prestamos = prestamos;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="publicacion")
+//    public Set getReservas() {
+//        return this.reservas;
+//    }
+//    
+//    public void setReservas(Set reservas) {
+//        this.reservas = reservas;
+//    }
+//
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="publicacion")
+//    public Set getPrestamos() {
+//        return this.prestamos;
+//    }
+//    
+//    public void setPrestamos(Set prestamos) {
+//        this.prestamos = prestamos;
+//    }
 
 
 

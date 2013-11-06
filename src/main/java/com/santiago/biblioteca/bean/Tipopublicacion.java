@@ -59,16 +59,16 @@ public class Tipopublicacion  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="tipopublicacion")
-    public Set getPublicacions() {
-        return this.publicacions;
-    }
-    
-    public void setPublicacions(Set publicacions) {
-        this.publicacions = publicacions;
-    }
-
+//
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="tipopublicacion")
+//    public Set getPublicacions() {
+//        return this.publicacions;
+//    }
+//    
+//    public void setPublicacions(Set publicacions) {
+//        this.publicacions = publicacions;
+//    }
+//
 
 
 

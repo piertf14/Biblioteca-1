@@ -139,23 +139,23 @@ public class Usuario  implements java.io.Serializable {
         this.direccion = direccion;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="usuario")
-    public Set getPrestamos() {
-        return this.prestamos;
-    }
-    
-    public void setPrestamos(Set prestamos) {
-        this.prestamos = prestamos;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="usuario")
-    public Set getReservas() {
-        return this.reservas;
-    }
-    
-    public void setReservas(Set reservas) {
-        this.reservas = reservas;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="usuario")
+//    public Set getPrestamos() {
+//        return this.prestamos;
+//    }
+//    
+//    public void setPrestamos(Set prestamos) {
+//        this.prestamos = prestamos;
+//    }
+//
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="usuario")
+//    public Set getReservas() {
+//        return this.reservas;
+//    }
+//    
+//    public void setReservas(Set reservas) {
+//        this.reservas = reservas;
+//    }
 
 
 

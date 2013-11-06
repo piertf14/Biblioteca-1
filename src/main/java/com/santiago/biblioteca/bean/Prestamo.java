@@ -149,15 +149,15 @@ public class Prestamo  implements java.io.Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="prestamo")
-    public Set getMultas() {
-        return this.multas;
-    }
-    
-    public void setMultas(Set multas) {
-        this.multas = multas;
-    }
+//
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="prestamo")
+//    public Set getMultas() {
+//        return this.multas;
+//    }
+//    
+//    public void setMultas(Set multas) {
+//        this.multas = multas;
+//    }
 
 
 

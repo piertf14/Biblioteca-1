@@ -111,14 +111,14 @@ public class Libro  implements java.io.Serializable {
         this.numeropag = numeropag;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="libro")
-    public Set getEjemplars() {
-        return this.ejemplars;
-    }
-    
-    public void setEjemplars(Set ejemplars) {
-        this.ejemplars = ejemplars;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="libro")
+//    public Set getEjemplars() {
+//        return this.ejemplars;
+//    }
+//    
+//    public void setEjemplars(Set ejemplars) {
+//        this.ejemplars = ejemplars;
+//    }
 
 
 

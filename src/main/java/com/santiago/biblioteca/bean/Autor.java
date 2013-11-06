@@ -96,14 +96,14 @@ public class Autor  implements java.io.Serializable {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="autor")
-    public Set getLibros() {
-        return this.libros;
-    }
-    
-    public void setLibros(Set libros) {
-        this.libros = libros;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="autor")
+//    public Set getLibros() {
+//        return this.libros;
+//    }
+//    
+//    public void setLibros(Set libros) {
+//        this.libros = libros;
+//    }
 
 
 

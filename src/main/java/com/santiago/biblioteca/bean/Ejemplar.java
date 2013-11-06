@@ -101,23 +101,23 @@ public class Ejemplar  implements java.io.Serializable {
         this.estado = estado;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="ejemplar")
-    public Set getPrestamos() {
-        return this.prestamos;
-    }
-    
-    public void setPrestamos(Set prestamos) {
-        this.prestamos = prestamos;
-    }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="ejemplar")
-    public Set getReservas() {
-        return this.reservas;
-    }
-    
-    public void setReservas(Set reservas) {
-        this.reservas = reservas;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="ejemplar")
+//    public Set getPrestamos() {
+//        return this.prestamos;
+//    }
+//    
+//    public void setPrestamos(Set prestamos) {
+//        this.prestamos = prestamos;
+//    }
+//
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="ejemplar")
+//    public Set getReservas() {
+//        return this.reservas;
+//    }
+//    
+//    public void setReservas(Set reservas) {
+//        this.reservas = reservas;
+//    }
 
 
 

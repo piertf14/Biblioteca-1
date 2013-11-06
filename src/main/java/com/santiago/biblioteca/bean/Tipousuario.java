@@ -60,14 +60,14 @@ public class Tipousuario  implements java.io.Serializable {
         this.descripcion = descripcion;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="tipousuario")
-    public Set getUsuarios() {
-        return this.usuarios;
-    }
-    
-    public void setUsuarios(Set usuarios) {
-        this.usuarios = usuarios;
-    }
+//@OneToMany(fetch=FetchType.LAZY, mappedBy="tipousuario")
+//    public Set getUsuarios() {
+//        return this.usuarios;
+//    }
+//    
+//    public void setUsuarios(Set usuarios) {
+//        this.usuarios = usuarios;
+//    }
 
 
 
