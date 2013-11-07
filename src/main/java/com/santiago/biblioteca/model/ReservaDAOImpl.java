@@ -6,7 +6,7 @@
 
 package com.santiago.biblioteca.model;
 
-import com.santiago.biblioteca.bean.Usuario;
+import com.santiago.biblioteca.bean.Reserva;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,46 +17,46 @@ import org.springframework.stereotype.Repository;
  *
  * @author ginna
  */
-@Repository("usuarioDAO")
-public class UsuarioDAOImpl implements UsuarioDAO{
+@Repository("reservaDAO")
+public class ReservaDAOImpl implements ReservaDAO{
     
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Usuario> getAll() {
+    public List<Reserva> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Usuario> usuarios = session.createQuery("from usuario").list();
+        List<Reserva> reservas = session.createQuery("from reserva").list();
         session.getTransaction().commit();
-        return usuarios;
+        return reservas;
     }
 
     @Override
-    public Integer save(Usuario usuario) {
+    public Integer save(Reserva reserva) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        session.saveOrUpdate(usuario);
+        session.saveOrUpdate(reserva);
         session.getTransaction().commit();
-        return usuario.getId();
+        return reserva.getId();
     }
 
     @Override
     public void remove(int id) {
         Session session= sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Usuario usuario=(Usuario)session.load(Usuario.class, id);
-        session.delete(usuario);
+        Reserva reserva=(Reserva)session.load(Reserva.class, id);
+        session.delete(reserva);
         session.getTransaction().commit();
     }
 
     @Override
-    public Usuario get(int id) {
+    public Reserva get(int id) {
         Session session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Usuario usuario=(Usuario)session.get(Usuario.class, id);
+        Reserva reserva=(Reserva)session.get(Reserva.class, id);
         session.getTransaction().commit();
-        return usuario;
+        return reserva;
     }
     
 }

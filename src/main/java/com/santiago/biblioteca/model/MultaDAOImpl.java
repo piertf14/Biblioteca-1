@@ -6,7 +6,7 @@
 
 package com.santiago.biblioteca.model;
 
-import com.santiago.biblioteca.bean.Usuario;
+import com.santiago.biblioteca.bean.Multa;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,46 +17,46 @@ import org.springframework.stereotype.Repository;
  *
  * @author ginna
  */
-@Repository("usuarioDAO")
-public class UsuarioDAOImpl implements UsuarioDAO{
+@Repository("multaDAO")
+public class MultaDAOImpl implements MultaDAO{
     
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Usuario> getAll() {
+    public List<Multa> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Usuario> usuarios = session.createQuery("from usuario").list();
+        List<Multa> multas = session.createQuery("from multa").list();
         session.getTransaction().commit();
-        return usuarios;
+        return multas;
     }
 
     @Override
-    public Integer save(Usuario usuario) {
+    public Integer save(Multa multa) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        session.saveOrUpdate(usuario);
+        session.saveOrUpdate(multa);
         session.getTransaction().commit();
-        return usuario.getId();
+        return multa.getId();
     }
 
     @Override
     public void remove(int id) {
         Session session= sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Usuario usuario=(Usuario)session.load(Usuario.class, id);
-        session.delete(usuario);
+        Multa multa=(Multa)session.load(Multa.class, id);
+        session.delete(multa);
         session.getTransaction().commit();
     }
 
     @Override
-    public Usuario get(int id) {
+    public Multa get(int id) {
         Session session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Usuario usuario=(Usuario)session.get(Usuario.class, id);
+        Multa multa=(Multa)session.get(Multa.class, id);
         session.getTransaction().commit();
-        return usuario;
+        return multa;
     }
     
 }
