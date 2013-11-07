@@ -13,7 +13,7 @@
     <body>
         <nav>
             <ul>
-                <li class="title">Biblioteca</li>
+                <li class="title">Biblioteca 1</li>
                 <li><a href="viewUsuarios.html">Usuario</a></li>
                 <li><a href="viewReservas.html">Reservas</a></li>
                 <li><a href="viewPrestamos.html">Préstamos</a></li>
