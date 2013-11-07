@@ -6,9 +6,9 @@
         <title>Biblioteca - <tiles:insertAttribute name="title"></tiles:insertAttribute></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="/biblioteca/static/vendor/normalize-css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/biblioteca/static/css/estilo.css">
-        <script src="/biblioteca/static/vendor/jquery/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/vendor/normalize-css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/estilo.css">
+        <script src="${pageContext.request.contextPath}/static/vendor/jquery/jquery.js"></script>
     </head>
     <body>
         <nav>
