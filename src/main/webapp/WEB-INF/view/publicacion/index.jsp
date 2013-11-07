@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
     <h2>Lista de publicaciones</h2>
@@ -14,25 +15,21 @@
                 <th>Subtitulo</th>
                 <th>Editor</th>
                 <th>Número</th>
-                <th>Fecha de ediciÃ³n</th>
+                <th>Fecha de edición</th>
+                <th>Tipo de publicación</th>
             </tr>
         </thead>
         <tbody>
+            <c:forEach items="${publicaciones}" var="publicacion">
             <tr class="over">
-                <td>Piura progresa</td>
-                <td></td>
-                <td>Correo</td>
-                <td>12323</td>
-                <td>2009</td>
+                <td>${publicacion.titulo}</td>
+                <td>${publicacion.subtitulo}</td>
+                <td>${publicacion.editor}</td>
+                <td>${publicacion.numero}</td>
+                <td>${publicacion.fechaEdicion}</td>
+                <td>${publicacion.tipopublicacion.descripcion}</td>
             </tr>
-            <tr class="over">
-                <td>Piura progresa</td>
-                <td></td>
-                <td>Correo</td>
-                <td>453223</td>
-                <td>2013</td>
-            </tr>
-
+            </c:forEach>
         </tbody>
     </table>
 </article>

@@ -29,7 +29,7 @@ article form table tbody span.error{background-color:inherit;border:none;padding
 article form input[type=text],article form input[type=password]{padding:3px 4px}
 article form table tbody th{padding:5px 10px 5px 30px;text-align:right}
 article form table tfoot td{text-align:center;padding:10px 0 0 0}
-article table.list{margin-top:20px}
+article table.list{border:1px solid #ddd;margin-top:20px}
 article form#search{margin-top:20px}
 article a.button{text-decoration:none;font-size:14px;font-weight:normal;color:#fff;background-color:#555;border:0;padding:7px 15px 5px 15px}
 article table.list thead th{border-bottom:1px solid #ddd;padding:2px 10px 1px 10px}
