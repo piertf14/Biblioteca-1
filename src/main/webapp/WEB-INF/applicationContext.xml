@@ -22,7 +22,7 @@
           class="org.springframework.context.support.ResourceBundleMessageSource" >
         <property name="basename" value="messages"/>
     </bean>
-    <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
