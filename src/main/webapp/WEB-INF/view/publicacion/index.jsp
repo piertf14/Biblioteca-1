@@ -2,13 +2,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
     <h2>Lista de publicaciones</h2>
-    <a class="button" href="#new-publicacion">Agregar</a>		
-    <form id="search" method="post" action="">
-        <input type="text" placeholder="buscar personal...">
-        <input type="submit" value="Buscar">
-    </form>
-
-    <table cellpadding="0" cellspacing="0" border="0" class="list">
+    <a href="${pageContext.request.contextPath}/publicacion/agregar" class="button first-button border-right">Agregar</a><a class="button last-button">Tipos de publicación</a>
+    <hr>
+    <table id="list" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
                 <th>Titulo</th>

@@ -1,9 +1,21 @@
 {
-	"name": "Biblioteca",
-	"version": "0.0.1",
-	"dependencies": {
-		"normalize-css": "*",
-		"jquery": "*",
-		"datatables": "*"
-	}
+  "name": "Biblioteca",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gianburga/Biblioteca",
+  "description": "Biblioteca",
+  "authors": [
+    "Ginna Santiago"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependenciesIgnore": {
+    "normalize-css": ["**/!(normalize-css.js)"],
+    "when": ["docs", "test", "*.!(js)", ".*", "*.!(css)"]
+  }
 }

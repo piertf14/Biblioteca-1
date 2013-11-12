@@ -4,11 +4,24 @@
 <html>
     <head>
         <title>Biblioteca - <tiles:insertAttribute name="title"></tiles:insertAttribute></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/vendor/normalize-css/normalize.css">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/bower_components/normalize-css/normalize.css">
+
+<!--link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/datatables/media/css/demo_page.css"/-->
+<!--link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/datatables/media/css/demo_table.css"/-->
+
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/datatables/media/css/demo_table_jui.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/datatables/media/css/jquery.dataTables.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/jquery-ui/themes/overcast/jquery-ui.css"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/estilo.css">
-        <script src="${pageContext.request.contextPath}/static/vendor/jquery/jquery.js"></script>
+
+<!--link rel="stylesheet" href="${pageContext.request.contextPath}/static/bower_components/datatables/media/css/jquery.dataTables_themeroller.css"/-->
+<!--script src="${pageContext.request.contextPath}/static/bower_components/jquery/jquery.js"></script-->
+        <script src="${pageContext.request.contextPath}/static/bower_components/datatables/media/js/jquery.js"></script>
+        <script src="${pageContext.request.contextPath}/static/bower_components/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="${pageContext.request.contextPath}/static/bower_components/jquery-ui/ui/jquery-ui.js"></script>
+
     </head>
     <body>
         <nav>
@@ -27,10 +40,22 @@
             </ul>
         </nav>
         <header>
-            <h1><tiles:insertAttribute name="title"></tiles:insertAttribute></h1>
+            <h1><tiles:insertAttribute name="title"/></h1>
         </header>
         <section>
-        <tiles:insertAttribute name="body"></tiles:insertAttribute>
+            <tiles:insertAttribute name="body"/>
         </section>
+        <script>
+            $(document).ready(function() {
+                $(".datePicker").datepicker();
+                oTable = $('#list').dataTable({
+                    "bJQueryUI": true,
+                    "sPaginationType": "full_numbers",
+                    "oLanguage": {
+                        "sUrl": "${pageContext.request.contextPath}/static/datatables-language-spanish.json"
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

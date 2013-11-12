@@ -1,49 +1,53 @@
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
     <h2>Ingresar publicación</h2>
-    <form method="post" action="">
+    <form:form method="post" action="guardar" commandName="publicacion">
         <table border="0" cellpadding="0" cellspacing="0">
             <tbody>
                 <tr>
-                    <th>Título</th>
+                    <th><form:label path="titulo">Título</form:label></th>
                     <td>
-                        <input type="text" name="" placeholder="ingrese un título">
+                        <form:input path="titulo" id="titulo" cssClass="large" placeholder="ingrese título"></form:input>
+                        <form:errors path="titulo" cssClass="error"/>
                     </td>
                 </tr>
-                <tr>
-                    <th>Subtítulo</th>
-                    <td><input type="text" name="" placeholder="ingrese un subtítulo"></td>
+                    <tr>
+                        <th><form:label path="subtitulo">Subtítulo</form:label></th>
+                    <td><form:input path="subtitulo" id="subtitulo" cssClass="large" placeholder="ingrese un subtítulo"/></td>
                 </tr>
                 <tr>
-                    <th>Editor</th>
-                    <td><input type="text" name="" placeholder="ingrese un editor"></td>
+                    <th><form:label path="editor">Editor</form:label></th>
+                    <td><form:input path="editor" id="editor" cssClass="medium" placeholder="ingrese un editor"/></td>
                 </tr>
                 <tr>
-                    <th>Número</th>
-                    <td><input type="text" name="" placeholder="ingrese un nÃºmero"></td>
+                    <th><form:label path="numero">Número</form:label></th>
+                    <td><form:input path="numero" id="numero" cssClass="small" placeholder="ingrese un número"/></td>
                 </tr>
                 <tr>
-                    <th>Fecha Edición</th>
-                    <td><input type="date" name="" ></td>
+                    <th><form:label path="fechaEdicion">Fecha de Edición</form:label></th>
+                    <td><form:input path="fechaEdicion" readonly="true" id="fechaEdicion" cssClass="datePicker small"/></td>
                 </tr>
                 <tr>
-                    <th>Tipo</th>
-                    <td>
-                        <select>
-                            <option>Selecciona</option>
-                        </select>
-                        <a href="#new-tipopublicacion">Crear tipo de publicación</a>
+                    <th><form:label path="tipopublicacion">Tipo de Publicación</form:label></th>
+                        <td>
+                        <form:select path="tipopublicacion" id="tipopublicacion">
+                            <form:option value="">Seleccione</form:option>
+                            <form:options items="${tipospublicacion}" itemValue="id"/>
+                        </form:select>
+                        <a href="${pageContext.request.contextPath}/tipoPublicacion/agregar" class="button first-button last-button">Crear tipo de publicación</a>
                     </td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Guardar">
-                        <input type="reset" value="Cancelar">
-                    </td>
-                </tr>
-            </tfoot>
+            <!--            <tfoot>
+                            <tr>
+                                <td colspan="2">
+            
+                                </td>
+                            </tr>
+                        </tfoot>-->
         </table>
-    </form>
+        <hr>
+        <input type="submit" value="Guardar" class="first-button border-right"><input type="reset" value="Cancelar" class="last-button a">
+    </form:form>
 </article>
