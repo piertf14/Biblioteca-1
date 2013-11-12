@@ -7,6 +7,9 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/biblioteca</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">ubuntu13</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping class="com.santiago.biblioteca.bean.Libro"/>
     <mapping class="com.santiago.biblioteca.bean.Tipopublicacion"/>
     <mapping class="com.santiago.biblioteca.bean.Autor"/>

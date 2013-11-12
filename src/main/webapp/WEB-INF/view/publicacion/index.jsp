@@ -1,86 +1,32 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
     <h2>Lista de publicaciones</h2>
-    <a class="button" href="#new-publicacion">Agregar</a>		
-    <form id="search" method="post" action="">
-        <input type="text" placeholder="buscar personal...">
-        <input type="submit" value="Buscar">
-    </form>
-
-    <table cellpadding="0" cellspacing="0" border="0" class="list">
+    <a href="${pageContext.request.contextPath}/publicacion/agregar" class="button first-button border-right">Agregar</a><a class="button last-button">Tipos de publicación</a>
+    <hr>
+    <table id="list" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
                 <th>Titulo</th>
                 <th>Subtitulo</th>
                 <th>Editor</th>
                 <th>Número</th>
-                <th>Fecha de ediciÃ³n</th>
+                <th>Fecha de edición</th>
+                <th>Tipo de publicación</th>
             </tr>
         </thead>
         <tbody>
+            <c:forEach items="${publicaciones}" var="publicacion">
             <tr class="over">
-                <td>Piura progresa</td>
-                <td></td>
-                <td>Correo</td>
-                <td>12323</td>
-                <td>2009</td>
+                <td>${publicacion.titulo}</td>
+                <td>${publicacion.subtitulo}</td>
+                <td>${publicacion.editor}</td>
+                <td>${publicacion.numero}</td>
+                <td>${publicacion.fechaEdicion}</td>
+                <td>${publicacion.tipopublicacion.descripcion}</td>
             </tr>
-            <tr class="over">
-                <td>Piura progresa</td>
-                <td></td>
-                <td>Correo</td>
-                <td>453223</td>
-                <td>2013</td>
-            </tr>
-
+            </c:forEach>
         </tbody>
     </table>
 </article>
-<article>
-    <h2>Ingresar publicación</h2>
-    <form method="post" action="">
-        <table border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-                <tr>
-                    <th>Título</th>
-                    <td>
-                        <input type="text" name="" placeholder="ingrese un título">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Subtítulo</th>
-                    <td><input type="text" name="" placeholder="ingrese un subtítulo"></td>
-                </tr>
-                <tr>
-                    <th>Editor</th>
-                    <td><input type="text" name="" placeholder="ingrese un editor"></td>
-                </tr>
-                <tr>
-                    <th>Número</th>
-                    <td><input type="text" name="" placeholder="ingrese un nÃºmero"></td>
-                </tr>
-                <tr>
-                    <th>Fecha Edición</th>
-                    <td><input type="date" name="" ></td>
-                </tr>
-                <tr>
-                    <th>Tipo</th>
-                    <td>
-                        <select>
-                            <option>Selecciona</option>
-                        </select>
-                        <a href="#new-tipopublicacion">Crear tipo de publicación</a>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Guardar">
-                        <input type="reset" value="Cancelar">
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-    </form>
-</article>
+

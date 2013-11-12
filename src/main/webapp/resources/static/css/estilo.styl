@@ -7,20 +7,25 @@ body
   font-size 13px
   background-color: #fff
 
-tr.over
+input[type=button], 
+input[type=submit],
+input[type=reset]
+  font-size 11px
+
+/*tr.over
   background-color: #eee
   cursor: pointer
 
 tr:hover.over
   background-color: #fff
-  cursor: pointer
+  cursor: pointer*/
 
-.record_properties th
+/*.record_properties th
   font-size: 10px
   text-align: right
   padding-right: 10px
   padding-left: 10px
-  background-color: #bcbbc6
+  background-color: #bcbbc6*/
 
 .record_properties
   margin-top: 20px
@@ -98,30 +103,21 @@ article
   border-bottom: 3px solid #00bfff
 
 article h2
+  font-weight normal
   font-style: italic
-  margin: 0 0 20px 0
-  padding: 0 0 15px 0
+  margin: 0 0 0.5em 0
+  padding: 0.5em 0 0.5em 0
   border-bottom: 1px solid #ddd
 
 input::-webkit-input-placeholder
   font-style: italic
-
-article form input[type=submit],
-article form input[type=button],
-article form input[type=reset]
-  font-size: 14px
-  font-weight: normal
-  color: #fff
-  background-color: #555
-  border: 0
-  padding: 7px 15px 5px 15px
 
 input[type=button]
   font-weight: bold
   color: #ccc
   background-color: #555
   border: 0
-  padding: 7px 15px 5px 15px
+  padding: 0
 
 #a
   font-size: 13px
@@ -159,44 +155,135 @@ article form table tbody span.error
   color: #f00
   font-style: italic
 
-article form input[type=text],
-article form input[type=password]
-  padding: 3px 4px
+article
+  input[type=text],
+  input[type=date],
+  input[type=password]
+    border 1px solid gray
+    line-height 2em
+    padding 0 0.4em
 
-article form table tbody th
-  padding: 5px 10px 5px 30px
-  text-align: right
+    &.medium
+      width 200px
 
-article form table tfoot td
-  text-align: center
-  padding: 10px 0 0 0
+    &.small
+      width 80px
 
-article table.list
-  margin-top: 20px
+    &.large
+      width 400px
+
+  input[type=submit],
+  input[type=button],
+  input[type=reset],
+  a.button
+    font-family "Droid Sans", sans-serif
+    font-weight 400
+    text-decoration none
+    padding 0 1em
+    line-height 2.4em
+    font-size 12px
+    color #fff
+    background-color #555
+    display inline-block
+    border none
+    cursor pointer
+
+  input[type=submit].a,
+  input[type=reset].a,
+  input[type=button].a
+    background-color #777
+
+  input[type=submit]:hover,
+  input[type=button]:hover,
+  input[type=reset]:hover,
+  a.button:hover
+    text-decoration none
+    background-color #ccc
+    color #333
+  
+  form 
+    table 
+      tfoot
+        /*padding-top 1em*/
+      tbody 
+        th
+          label
+            cursor pointer
+            font-weight normal
+            display block
+            line-height 2.4em
+            text-align right
+            padding 0 0.5em 0 0
 
 article form#search
   margin-top: 20px
 
-article a.button
-  text-decoration: none
-  font-size: 14px
-  font-weight: normal
-  color: #fff
-  background-color: #555
-  border: 0
-  padding: 7px 15px 5px 15px
+a.button:hover
+  background-color #ddd
+  color black
+
+.border-right
+  border-right 1px solid gray
+
+.first-button
+  border-bottom-left-radius 0.5em
+
+.last-button
+  border-top-right-radius 0.5em
+
+a.button
+  text-decoration none
+  font-size 14px
+  font-weight normal
+  color #fff
+  background-color #555
+  padding 0 1.4em
+  line-height 2em
+  display inline-block  
+  cursor pointer
+  /*padding: 7px 15px 5px 15px*/
 
 article table.list thead th
-  border-bottom: 1px solid #ddd
-  padding: 2px 10px 1px 10px
+  /*border-bottom: 1px solid #ddd*/
+  /*padding: 2px 10px 1px 10px*/
 
 article table.list tbody td
-  padding: 0 15px
+  /*padding: 0 15px*/
 
 article table td a
-  text-decoration: none
-  color: #00bfff
+  /*text-decoration: none
+  color: #00bfff*/
 
-article table td a:hover
-  text-decoration: underline
+article
+  table
+    td
+      a:hover
+        text-decoration: underline
 
+.ui-icon
+  display inline-block
+  float right
+
+table.dataTable 
+  thead
+    th
+      border-bottom none
+
+table.dataTable
+  tbody
+    tr:hover
+      cursor pointer
+      background-color #ccc
+      td.sorting_1
+        background-color #ccc
+
+div.dataTables_filter
+  input[type=text]
+    border 1px solid #ddd
+    padding 0.2em 0.15em  
+
+hr
+  width 100%
+  margin 0.5em 0
+  border none
+  border-bottom 1px solid #ddd
