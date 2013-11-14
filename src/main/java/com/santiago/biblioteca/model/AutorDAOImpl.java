@@ -27,7 +27,7 @@ public class AutorDAOImpl  implements AutorDAO{
     public List<Autor> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Autor> autores = session.createQuery("from autor").list();
+        List<Autor> autores = session.createQuery("from Autor").list();
         session.getTransaction().commit();
         return autores;
     }
