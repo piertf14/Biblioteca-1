@@ -1,8 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package com.santiago.biblioteca.controller;
 
-import com.santiago.biblioteca.bean.Publicacion;
+import com.santiago.biblioteca.bean.Autor;
 import com.santiago.biblioteca.bean.Tipopublicacion;
-import com.santiago.biblioteca.service.TipoPublicacionService;
+import com.santiago.biblioteca.service.AutorService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +27,30 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 
 @Controller
-@RequestMapping(value = "/tipoPublicacion")
-public class TipoPublicacionController {
+@RequestMapping("/autor")
+public class AutorController {
     
     @Autowired
-    private TipoPublicacionService tipoPublicacionService;
+    private AutorService autorService;
     
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
-        List<Tipopublicacion> Tipospublicacion = tipoPublicacionService.getAll();
-        model.addAttribute("tipospublicacion", Tipospublicacion);
-        return "tipoPublicacion.index";
+        List<Autor> autores = autorService.getAll();
+        model.addAttribute("autores", autores);
+        return "autor.index";
     }
     
-    @RequestMapping(value = "/agregar", method = RequestMethod.GET)
+    @RequestMapping(value = "/agregar",  method = RequestMethod.GET)
     public String agregar(Model model){
-        Tipopublicacion tipopublicacion = new Tipopublicacion();
-        model.addAttribute("tipopublicacion", tipopublicacion);
-        return "tipoPublicacion.agregar_editar";
+        Autor autor = new Autor();
+        model.addAttribute("autor", autor);
+        return "autor.agregar_editar";
     }
     
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
-    public String editar(Model model, @PathVariable Integer id){
-        Tipopublicacion tipoPublicacion = tipoPublicacionService.get(id);
-        model.addAttribute("tipopublicacion", tipoPublicacion);
-        return "tipoPublicacion.agregar_editar";
+    public String editar(Model model, @PathVariable("id") Integer id){
+        
+        return "autor.agregar_editar";
     }
     
     @RequestMapping(value = "/guardar", method = RequestMethod.GET)
@@ -56,16 +61,15 @@ public class TipoPublicacionController {
     @RequestMapping(value = "/guardar", method = RequestMethod.POST)
     public String guardar(
             Model model, 
-            @ModelAttribute @Valid Tipopublicacion tipopublicacion,
+            @ModelAttribute @Valid Autor autor,
             BindingResult result,
             RedirectAttributes redirect
     ){
         if(result.hasErrors()){
-            model.addAttribute("tipopublicacion", tipopublicacion);
-            return "tipoPublicacion.form";
+            model.addAttribute("autor", autor);
+            return "autor.agregar_editar";
         }
-        tipoPublicacionService.save(tipopublicacion);
-        int id = tipopublicacion.getId();
+        int id = autorService.save(autor);
         redirect.addFlashAttribute("messages", new String[]{
             "Guardado correctamente"
         });
