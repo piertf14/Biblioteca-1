@@ -47,7 +47,9 @@
         </section>
         <script>
             $(document).ready(function() {
-                $(".datePicker").datepicker();
+                $(".datePicker").datepicker({
+                    dateFormat: "yy-mm-dd"
+                });
                 oTable = $('#list').dataTable({
                     "bJQueryUI": true,
                     "sPaginationType": "full_numbers",

@@ -27,7 +27,7 @@ public class TipoPublicacionDAOImpl implements TipoPublicacionDAO{
     public List<Tipopublicacion> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Tipopublicacion> tipoPublicaciones = session.createQuery("from tipopublicacion").list();
+        List<Tipopublicacion> tipoPublicaciones = session.createQuery("from Tipopublicacion").list();
         session.getTransaction().commit();
         return tipoPublicaciones;
     }

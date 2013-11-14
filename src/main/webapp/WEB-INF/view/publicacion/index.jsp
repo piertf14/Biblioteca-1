@@ -17,7 +17,7 @@
         </thead>
         <tbody>
             <c:forEach items="${publicaciones}" var="publicacion">
-            <tr class="over">
+            <tr onclick="location.href='${pageContext.request.contextPath}/publicacion/editar/${publicacion.id}'">
                 <td>${publicacion.titulo}</td>
                 <td>${publicacion.subtitulo}</td>
                 <td>${publicacion.editor}</td>

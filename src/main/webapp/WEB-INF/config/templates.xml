@@ -11,12 +11,34 @@
         <put-attribute name="title" value="Example" />        
         <put-attribute name="body" value="Bienvenido" />        
     </definition>  
+    
+    <!-- Tipo publicación -->
+    <definition name="tipoPublicacion.index" extends="template">
+        <put-attribute name="title" value="Tipos de publicaciones" />
+        <put-attribute name="body" value="/WEB-INF/view/tipoPublicacion/index.jsp" />
+    </definition>
+    <definition name="tipoPublicacion.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Tipo de Publicación" />
+        <put-attribute name="form" value="/WEB-INF/view/tipoPublicacion/form.jsp" />
+    </definition>
+    <definition name="tipoPublicacion.agregar_editar" extends="template">
+        <put-attribute name="title" value="Tipos de publicaciones" />
+        <put-attribute name="body" value="tipoPublicacion.form" />
+    </definition>
+    <!-- -->
+    <!-- Publicación -->
     <definition name="publicacion.index" extends="template">
         <put-attribute name="title" value="Publicaciones" />        
         <put-attribute name="body" value="/WEB-INF/view/publicacion/index.jsp" />        
     </definition>
-    <definition name="publicacion.form" extends="template">
-        <put-attribute name="title" value="Publicaciones" />
-        <put-attribute name="body" value="/WEB-INF/view/publicacion/form.jsp" />
+    <definition name="publicacion.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Publicación" />
+        <put-attribute name="form" value="/WEB-INF/view/publicacion/form.jsp" />
     </definition>
+    <definition name="publicacion.agregar_editar" extends="template">
+        <put-attribute name="title" value="Publicaciones" />
+        <put-attribute name="body" value="publicacion.form" />
+    </definition>
+    <!-- end Publicación -->
+    
 </tiles-definitions>

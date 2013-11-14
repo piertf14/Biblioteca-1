@@ -10,6 +10,9 @@
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
     <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.connection.useUnicode">true</property>
+    <property name="hibernate.connection.characterEncoding">UTF-8</property>
+    <property name="hibernate.connection.charSet">UTF-8</property>
     <mapping class="com.santiago.biblioteca.bean.Libro"/>
     <mapping class="com.santiago.biblioteca.bean.Tipopublicacion"/>
     <mapping class="com.santiago.biblioteca.bean.Autor"/>
