@@ -27,7 +27,7 @@ public class TipoUsuarioImpl implements TipoUsuarioDAO{
     public List<Tipousuario> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Tipousuario> tipousuarios = session.createQuery("from tipousuario").list();
+        List<Tipousuario> tipousuarios = session.createQuery("from Tipousuario").list();
         session.getTransaction().commit();
         return tipousuarios;
     }

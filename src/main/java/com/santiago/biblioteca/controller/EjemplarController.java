@@ -6,8 +6,8 @@
 
 package com.santiago.biblioteca.controller;
 
-import com.santiago.biblioteca.bean.Autor;
-import com.santiago.biblioteca.service.AutorService;
+import com.santiago.biblioteca.bean.Ejemplar;
+import com.santiago.biblioteca.service.EjemplarService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,31 +25,31 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 
 @Controller
-@RequestMapping("/autor")
-public class AutorController {
+@RequestMapping("/ejemplar")
+public class EjemplarController {
     
     @Autowired
-    private AutorService autorService;
+    private EjemplarService ejemplarService;
     
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
-        List<Autor> autores = autorService.getAll();
-        model.addAttribute("autores", autores);
-        return "autor.index";
+        List<Ejemplar> ejemplares = ejemplarService.getAll();
+        model.addAttribute("ejemplares", ejemplares);
+        return "ejemplar.index";
     }
     
     @RequestMapping(value = "/agregar",  method = RequestMethod.GET)
     public String agregar(Model model){
-        Autor autor = new Autor();
-        model.addAttribute("autor", autor);
-        return "autor.agregar_editar";
+        Ejemplar ejemplar = new Ejemplar();
+        model.addAttribute("ejemplar", ejemplar);
+        return "ejemplar.agregar_editar";
     }
     
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
     public String editar(Model model, @PathVariable("id") Integer id){
-        Autor autor = autorService.get(id);
-        model.addAttribute("autor", autor);
-        return "autor.agregar_editar";
+        Ejemplar ejemplar = ejemplarService.get(id);
+        model.addAttribute("ejemplar", ejemplar);
+        return "ejemplar.agregar_editar";
     }
     
     @RequestMapping(value = "/guardar", method = RequestMethod.GET)
@@ -60,15 +60,15 @@ public class AutorController {
     @RequestMapping(value = "/guardar", method = RequestMethod.POST)
     public String guardar(
             Model model, 
-            @ModelAttribute Autor autor,
+            @ModelAttribute Ejemplar ejemplar,
             BindingResult result,
             RedirectAttributes redirect
     ){
         if(result.hasErrors()){
-            model.addAttribute("autor", autor);
-            return "autor.agregar_editar";
+            model.addAttribute("ejemplar", ejemplar);
+            return "ejemplar.agregar_editar";
         }
-        int id = autorService.save(autor);
+        int id = ejemplarService.save(ejemplar);
         redirect.addFlashAttribute("messages", new String[]{
             "Guardado correctamente"
         });

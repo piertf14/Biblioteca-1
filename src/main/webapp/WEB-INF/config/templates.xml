@@ -19,7 +19,7 @@
     </definition>
     <definition name="autor.form" template="/WEB-INF/view/templates/template-form.jsp">
         <put-attribute name="title" value="Autor" />
-        <put-attribute name="form" value="/WEB-INF/view/tipoPublicacion/form.jsp" />
+        <put-attribute name="form" value="/WEB-INF/view/autor/form.jsp" />
     </definition>
     <definition name="autor.agregar_editar" extends="template">
         <put-attribute name="title" value="Autores" />

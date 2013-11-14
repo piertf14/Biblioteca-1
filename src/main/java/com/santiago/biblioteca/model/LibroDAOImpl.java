@@ -27,7 +27,7 @@ public class LibroDAOImpl implements LibroDAO{
     public List<Libro> getAll() {
         Session session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Libro> libros=session.createQuery("from libro").list();
+        List<Libro> libros=session.createQuery("from Libro").list();
         session.beginTransaction().commit();
         return libros;
     }

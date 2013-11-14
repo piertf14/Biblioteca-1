@@ -27,7 +27,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
     public List<Usuario> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Usuario> usuarios = session.createQuery("from usuario").list();
+        List<Usuario> usuarios = session.createQuery("from Usuario").list();
         session.getTransaction().commit();
         return usuarios;
     }

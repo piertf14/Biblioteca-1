@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.santiago.biblioteca.model;
 
 import com.santiago.biblioteca.bean.Autor;
@@ -18,11 +17,11 @@ import org.springframework.stereotype.Repository;
  * @author ginna
  */
 @Repository("autorDAO")
-public class AutorDAOImpl  implements AutorDAO{
+public class AutorDAOImpl implements AutorDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     @Override
     public List<Autor> getAll() {
         Session session = sessionFactory.getCurrentSession();
@@ -31,30 +30,32 @@ public class AutorDAOImpl  implements AutorDAO{
         session.getTransaction().commit();
         return autores;
     }
+
     @Override
     public Integer save(Autor autor) {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.saveOrUpdate(autor);
         session.getTransaction().commit();
         return autor.getId();
     }
+
     @Override
     public void remove(int id) {
-        Session session= sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Autor autor=(Autor)session.load(Autor.class, id);
+        Autor autor = (Autor) session.load(Autor.class, id);
         session.delete(autor);
         session.getTransaction().commit();
     }
 
     @Override
     public Autor get(int id) {
-        Session session=sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        Autor autor=(Autor)session.get(Autor.class, id);
+        Autor autor = (Autor) session.get(Autor.class, id);
         session.getTransaction().commit();
         return autor;
     }
-    
+
 }

@@ -27,7 +27,7 @@ public class ReservaDAOImpl implements ReservaDAO{
     public List<Reserva> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Reserva> reservas = session.createQuery("from reserva").list();
+        List<Reserva> reservas = session.createQuery("from Reserva").list();
         session.getTransaction().commit();
         return reservas;
     }

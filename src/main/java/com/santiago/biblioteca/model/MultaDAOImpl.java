@@ -27,7 +27,7 @@ public class MultaDAOImpl implements MultaDAO{
     public List<Multa> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Multa> multas = session.createQuery("from multa").list();
+        List<Multa> multas = session.createQuery("from Multa").list();
         session.getTransaction().commit();
         return multas;
     }

@@ -26,7 +26,7 @@ public class PrestamoDAOImpl implements PrestamoDAO{
     public List<Prestamo> getAll() {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Prestamo> prestamos = session.createQuery("from prestamos").list();
+        List<Prestamo> prestamos = session.createQuery("from Prestamo").list();
         session.getTransaction().commit();
         return prestamos;
     }

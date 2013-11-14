@@ -1,7 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<form:form method="post" action="${pageContext.request.contextPath}/autor/guardar" commandName="publicacion">
+<form:form method="post" action="${pageContext.request.contextPath}/autor/guardar" commandName="autor">
     <table border="0" cellpadding="0" cellspacing="0">
         <thead>
             <c:forEach items="${messages}" var="message">
@@ -30,7 +30,7 @@
                 <tr>
                     <th><form:label path="fechaNacimiento">Fecha de Nacimiento</form:label></th>
                     <td>
-                    <form:input path="fechaNacimiento" id="datePicker" cssClass="small"/>
+                    <form:input path="fechaNacimiento" cssClass="small datePicker"/>
                     <form:errors path="fechaNacimiento"></form:errors>
                     </td>
                 </tr>

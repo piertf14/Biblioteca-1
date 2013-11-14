@@ -27,7 +27,7 @@ public class EjemplarDAOImpl implements EjemplarDAO{
     public List<Ejemplar> getAll() {
         Session session=sessionFactory.getCurrentSession();
         session.beginTransaction();
-        List<Ejemplar> ejemplares=session.createQuery("from ejemplar").list();
+        List<Ejemplar> ejemplares=session.createQuery("from Ejemplar").list();
         session.getTransaction().commit();
         return ejemplares;
     }
