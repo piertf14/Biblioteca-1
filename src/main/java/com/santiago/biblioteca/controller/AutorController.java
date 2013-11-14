@@ -49,7 +49,8 @@ public class AutorController {
     
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
     public String editar(Model model, @PathVariable("id") Integer id){
-        
+        Autor autor = new Autor();
+        model.addAttribute("autor", autor);
         return "autor.agregar_editar";
     }
     

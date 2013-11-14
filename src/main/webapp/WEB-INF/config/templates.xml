@@ -12,6 +12,21 @@
         <put-attribute name="body" value="Bienvenido" />        
     </definition>  
     
+    <!-- Autor -->
+    <definition name="autor.index" extends="template">
+        <put-attribute name="title" value="Autores" />
+        <put-attribute name="body" value="/WEB-INF/view/autor/index.jsp" />
+    </definition>
+    <definition name="autor.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Autor" />
+        <put-attribute name="form" value="/WEB-INF/view/tipoPublicacion/form.jsp" />
+    </definition>
+    <definition name="autor.agregar_editar" extends="template">
+        <put-attribute name="title" value="Autores" />
+        <put-attribute name="body" value="autor.form" />
+    </definition>
+    <!-- -->
+    
     <!-- Tipo publicación -->
     <definition name="tipoPublicacion.index" extends="template">
         <put-attribute name="title" value="Tipos de publicaciones" />
