@@ -21,7 +21,7 @@ public class AutorDAOImpl implements AutorDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
-
+    
     @Override
     public List<Autor> getAll() {
         Session session = sessionFactory.getCurrentSession();

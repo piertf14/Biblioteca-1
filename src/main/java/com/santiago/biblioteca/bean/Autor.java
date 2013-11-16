@@ -101,4 +101,9 @@ public class Autor implements java.io.Serializable {
 //    public void setLibros(Set libros) {
 //        this.libros = libros;
 //    }
+    @Override
+    public String toString() {
+        return nombre + " " + apellidos;
+    }
+    
 }

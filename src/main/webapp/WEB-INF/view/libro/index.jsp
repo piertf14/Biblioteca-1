@@ -2,24 +2,27 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
     <h2>Lista de Autores</h2>
-    <a href="${pageContext.request.contextPath}/autor/agregar" class="button first-button border-right">Agregar</a>
+    <a href="${pageContext.request.contextPath}/libro/agregar" class="button first-button border-right">Agregar</a>
     <hr>
+    <!-- id, isbn, titulo, editorial, numeropag, autor_id -->
     <table id="list" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>País</th>
-                <th>Fecha de Nacimiento</th>
+                <th>ISBN</th>
+                <th>Título</th>
+                <th>Editorial</th>
+                <th>Número de páginas</th>
+                <th>Autor</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${autores}" var="autor">
-            <tr onclick="location.href='${pageContext.request.contextPath}/autor/editar/${autor.id}'">
-                <td>${autor.nombre}</td>
-                <td>${autor.apellidos}</td>
-                <td>${autor.pais}</td>
-                <td>${autor.fechaNacimiento}</td>
+            <c:forEach items="${libros}" var="libro">
+            <tr onclick="location.href='${pageContext.request.contextPath}/libro/editar/${libro.id}'">
+                <td>${libro.isbn}</td>
+                <td>${libro.titulo}</td>
+                <td>${libro.editorial}</td>
+                <td>${libro.numeropag} páginas</td>
+                <td>${libro.autor}</td>
             </tr>
             </c:forEach>
         </tbody>

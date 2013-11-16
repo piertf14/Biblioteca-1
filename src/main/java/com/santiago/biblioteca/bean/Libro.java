@@ -60,7 +60,7 @@ public class Libro implements java.io.Serializable {
         this.id = id;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "autor_id", nullable = false)
     public Autor getAutor() {
         return this.autor;
@@ -114,4 +114,10 @@ public class Libro implements java.io.Serializable {
 //    public void setEjemplars(Set ejemplars) {
 //        this.ejemplars = ejemplars;
 //    }
+    
+    @Override
+    public String toString() {
+        return titulo + " - Autor: " + autor + " - Editorial: " +editorial;
+    }
+    
 }

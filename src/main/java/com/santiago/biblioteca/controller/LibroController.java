@@ -6,7 +6,9 @@
 
 package com.santiago.biblioteca.controller;
 
+import com.santiago.biblioteca.bean.Autor;
 import com.santiago.biblioteca.bean.Libro;
+import com.santiago.biblioteca.service.AutorService;
 import com.santiago.biblioteca.service.LibroService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,8 @@ public class LibroController {
     
     @Autowired
     private LibroService libroService;
+    @Autowired
+    private AutorService autorService;
     
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
@@ -41,14 +45,18 @@ public class LibroController {
     @RequestMapping(value = "/agregar",  method = RequestMethod.GET)
     public String agregar(Model model){
         Libro libro = new Libro();
+        List<Autor> autores = autorService.getAll();
         model.addAttribute("libro", libro);
+        model.addAttribute("autores", autores);
         return "libro.agregar_editar";
     }
     
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
     public String editar(Model model, @PathVariable("id") Integer id){
         Libro libro = libroService.get(id);
+        List<Autor> autores = autorService.getAll();
         model.addAttribute("libro", libro);
+        model.addAttribute("autores", autores);
         return "libro.agregar_editar";
     }
     

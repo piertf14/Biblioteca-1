@@ -7,7 +7,9 @@
 package com.santiago.biblioteca.controller;
 
 import com.santiago.biblioteca.bean.Ejemplar;
+import com.santiago.biblioteca.bean.Libro;
 import com.santiago.biblioteca.service.EjemplarService;
+import com.santiago.biblioteca.service.LibroService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +33,9 @@ public class EjemplarController {
     @Autowired
     private EjemplarService ejemplarService;
     
+    @Autowired
+    private LibroService libroService;
+    
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
         List<Ejemplar> ejemplares = ejemplarService.getAll();
@@ -41,7 +46,9 @@ public class EjemplarController {
     @RequestMapping(value = "/agregar",  method = RequestMethod.GET)
     public String agregar(Model model){
         Ejemplar ejemplar = new Ejemplar();
+        List<Libro> libros = libroService.getAll();
         model.addAttribute("ejemplar", ejemplar);
+        model.addAttribute("libros", libros);
         return "ejemplar.agregar_editar";
     }
     

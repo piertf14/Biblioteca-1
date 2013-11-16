@@ -12,6 +12,36 @@
         <put-attribute name="body" value="Bienvenido" />        
     </definition>  
     
+    <!-- Ejemplar -->
+    <definition name="ejemplar.index" extends="template">
+        <put-attribute name="title" value="Ejemplares" />
+        <put-attribute name="body" value="/WEB-INF/view/ejemplar/index.jsp" />
+    </definition>
+    <definition name="ejemplar.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Ejemplar" />
+        <put-attribute name="form" value="/WEB-INF/view/ejemplar/form.jsp" />
+    </definition>
+    <definition name="ejemplar.agregar_editar" extends="template">
+        <put-attribute name="title" value="Ejemplares" />
+        <put-attribute name="body" value="ejemplar.form" />
+    </definition>
+    <!-- -->
+    
+    <!-- Ejemplar -->
+    <definition name="libro.index" extends="template">
+        <put-attribute name="title" value="Libros" />
+        <put-attribute name="body" value="/WEB-INF/view/libro/index.jsp" />
+    </definition>
+    <definition name="libro.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Libro" />
+        <put-attribute name="form" value="/WEB-INF/view/libro/form.jsp" />
+    </definition>
+    <definition name="libro.agregar_editar" extends="template">
+        <put-attribute name="title" value="Libros" />
+        <put-attribute name="body" value="libro.form" />
+    </definition>
+    <!-- -->
+    
     <!-- Autor -->
     <definition name="autor.index" extends="template">
         <put-attribute name="title" value="Autores" />

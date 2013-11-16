@@ -9,7 +9,7 @@
             </c:forEach>
         </thead>
         <tbody>         
-            <! -- id, isbn, titulo, editorial, numeropag, autor_id -->
+            <!-- id, isbn, titulo, editorial, numeropag, autor_id -->
             <tr>
                 <th><form:label path="isbn">ISBN</form:label></th>
                 <td>
@@ -31,9 +31,17 @@
                 <tr>
                     <th><form:label path="numeropag">Número de páginas</form:label></th>
                     <td>
-                    <form:input path="numeropag" cssClass="small"/>
+                    <form:input path="numeropag" type="number" min="1" cssClass="small" />
                     <form:errors path="numeropag"></form:errors>
                     </td>
+                </tr>
+                <tr>
+                    <th><form:label path="autor.id">Autor</form:label></th>
+                <td>
+                <form:select path="autor.id">
+                    <form:options items="${autores}" itemValue="id"/>
+                </form:select>
+                </td>
                 </tr>
             </tbody>
         <form:hidden path="id"/>
