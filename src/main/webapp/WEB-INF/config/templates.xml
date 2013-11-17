@@ -12,6 +12,27 @@
         <put-attribute name="body" value="Bienvenido" />        
     </definition>  
     
+    <!-- usuario -->
+    <definition name="usuario.index" extends="template">
+        <put-attribute name="title" value="Usuarios" />
+        <put-attribute name="body" value="/WEB-INF/view/usuario/index.jsp" />
+    </definition>
+    <definition name="usuario.form" template="/WEB-INF/view/templates/template-form.jsp">
+        <put-attribute name="title" value="Usuario" />
+        <put-attribute name="form" value="/WEB-INF/view/usuario/form.jsp" />
+    </definition>
+    <definition name="usuario.agregar_editar" extends="template">
+        <put-attribute name="title" value="Usuarios" />
+        <put-attribute name="body" value="usuario.form" />
+    </definition>
+    <!-- -->    
+    <!-- multa -->
+    <definition name="multa.index" extends="template">
+        <put-attribute name="title" value="Multas" />
+        <put-attribute name="body" value="/WEB-INF/view/multa/index.jsp" />
+    </definition>
+    <!-- -->
+    
     <!-- Ejemplar -->
     <definition name="ejemplar.index" extends="template">
         <put-attribute name="title" value="Ejemplares" />

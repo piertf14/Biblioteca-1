@@ -6,7 +6,10 @@
 
 package com.santiago.biblioteca.controller;
 
+import com.santiago.biblioteca.bean.Tipousuario;
 import com.santiago.biblioteca.bean.Usuario;
+import com.santiago.biblioteca.service.TipoPublicacionService;
+import com.santiago.biblioteca.service.TipoUsuarioService;
 import com.santiago.biblioteca.service.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,9 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
     
+    @Autowired
+    private TipoUsuarioService tipoUsuarioService;
+    
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
         List<Usuario> usuarios = usuarioService.getAll();
@@ -41,7 +47,9 @@ public class UsuarioController {
     @RequestMapping(value = "/agregar",  method = RequestMethod.GET)
     public String agregar(Model model){
         Usuario usuario = new Usuario();
+        List<Tipousuario> tiposusuario = tipoUsuarioService.getAll();
         model.addAttribute("usuario", usuario);
+        model.addAttribute("tiposusuario", tiposusuario);
         return "usuario.agregar_editar";
     }
     

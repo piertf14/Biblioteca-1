@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <article>
-    <h2>Lista de Autores</h2>
+    <h2>Lista de Libros</h2>
     <a href="${pageContext.request.contextPath}/libro/agregar" class="button first-button border-right">Agregar</a>
     <hr>
     <!-- id, isbn, titulo, editorial, numeropag, autor_id -->

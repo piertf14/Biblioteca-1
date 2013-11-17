@@ -55,7 +55,9 @@ public class EjemplarController {
     @RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
     public String editar(Model model, @PathVariable("id") Integer id){
         Ejemplar ejemplar = ejemplarService.get(id);
+        List<Libro> libros = libroService.getAll();
         model.addAttribute("ejemplar", ejemplar);
+        model.addAttribute("libros", libros);
         return "ejemplar.agregar_editar";
     }
     
